@@ -8,6 +8,7 @@ contract TestToken is ERC20, Ownable {
     constructor() ERC20("TestToken", "TTK") {}
 
     function mint(address to, uint256 amount) public onlyOwner {
+    require(amount<1000000,"amount should be less than 1 million");
         _mint(to, amount);
     }
 }
